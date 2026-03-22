@@ -1,4 +1,4 @@
-name: mycustompipelines
+name: mycustompipeline
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
    - name: Checkout code
      uses: actions/checkout@v6
 
-   - name: Set up java
+   - name: Set up Java
      uses: actions/setup-java@v3
      with:
       distribution: 'temurin'
@@ -23,4 +23,10 @@ jobs:
     steps:
     - name: unit test
       run: mvn test
+
+    - name: sonar test
+      uses: SonarSource/sonarqube-scan-action@v7.0.0
+      env:
+       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+       SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
 
