@@ -49,4 +49,4 @@ jobs:
 
    -   name: Updating the image tag in deployment.yaml
        run: |
-        sed -i "s|image:.*|image: ${{ vars.DOCKERHUB_USERNAME }}/app:${{ github.run_id }}|g" deployment.yaml
+        sed -i "s|image:.*|image: ${{ vars.DOCKERHUB_USERNAME }}/app:${{ github.run_id }}|g" deployment-service.yaml
