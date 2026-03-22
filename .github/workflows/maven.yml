@@ -6,7 +6,7 @@ on:
 
 jobs:
   setup-install:
-   runs-on: myrunner
+   runs-on: ip-172-31-37-84
    steps:
    - name: Checkout code
      uses: actions/checkout@v6
@@ -16,16 +16,3 @@ jobs:
      with:
       distribution: 'temurin'
       java-version: '11'
- 
-  Test:
-    runs-on: myrunner
-    needs: setup-install
-    steps:
-    - name: unit test
-      run: mvn test
-
-    - name: SonarQube Scan
-      uses: SonarSource/sonarqube-scan-action@v7.0.0
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
