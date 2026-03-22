@@ -1,4 +1,4 @@
-name: mycustompipelines
+name: mycustompipeline
 
 on:
   push:
@@ -16,11 +16,13 @@ jobs:
      with:
       distribution: 'temurin'
       java-version: '11'
+
+   - name: Set up Maven
+     run: apt install maven -y
  
   Test:
-    runs-on: myrunner
+    runs-on: mynewrunner
     needs: setup-install
     steps:
     - name: unit test
       run: mvn test
-
