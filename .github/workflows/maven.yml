@@ -1,4 +1,4 @@
-name: mycustompipelines
+name: mycustompipeline
 
 on:
   push:
@@ -46,3 +46,7 @@ jobs:
       with:
         push: true
         tags: ${{ vars.DOCKERHUB_USERNAME }}/app:${{ github.run_id }}
+
+   -   name: Updating the image tag in deployment.yaml
+       run: |
+        sed -i "s|image:.*|image: ${{ vars.DOCKERHUB_USERNAME }}/app:${{ github.run_id }}|g" deployment.yaml
