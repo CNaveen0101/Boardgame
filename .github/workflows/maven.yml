@@ -16,3 +16,10 @@ jobs:
      with:
       distribution: 'temurin'
       java-version: '11'
+ 
+  Test:
+    runs-on: myrunner
+    needs: setup-install
+    steps:
+    - name: unit test
+      run: mvn test
