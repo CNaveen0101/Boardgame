@@ -76,6 +76,12 @@
     <artifactId>jacoco-maven-plugin</artifactId>
     <version>0.8.7</version>
 </dependency>
+
+		<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.30</version> <optional>true</optional>
+</dependency>
 	</dependencies>
 
 	<build>
@@ -127,6 +133,8 @@
     <url>http://13.127.177.61:8081/repository/maven-snapshots/</url>
   </snapshotRepository>
 </distributionManagement>
+
+	
 
 
 	
