@@ -18,7 +18,7 @@ jobs:
       java-version: '11'
 
    - name: Set up Maven
-     run: apt install maven -y
+     run: sudo apt install maven -y
  
   Test:
     runs-on: mynewrunner
