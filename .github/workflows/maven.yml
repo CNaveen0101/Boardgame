@@ -1,4 +1,4 @@
-name: mycustompipeline
+name: mycustompipeline.
 
 on:
   push:
