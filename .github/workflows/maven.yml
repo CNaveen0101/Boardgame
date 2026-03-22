@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  setup-install:
+  Build_Test:
    runs-on: mynewrunner
    steps:
    - name: Checkout code
@@ -17,12 +17,5 @@ jobs:
       distribution: 'temurin'
       java-version: '11'
 
-   - name: Set up Maven
-     run: sudo apt install maven -y
- 
-  Test:
-    runs-on: mynewrunner
-    needs: setup-install
-    steps:
-    - name: unit test
-      run: mvn test
+   - name: unit test
+     run: mvn test
