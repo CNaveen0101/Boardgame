@@ -1,4 +1,4 @@
-name: mycustompipelines
+name: mycustompipeline
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   setup-install:
-   runs-on: ip-172-31-37-84
+   runs-on: myrunner
    steps:
    - name: Checkout code
      uses: actions/checkout@v6
